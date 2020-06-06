@@ -1,8 +1,8 @@
 {
-  "name": "unittest",
+  "name": "presentation",
   "version": "1.0.0",
   "description": "demo for presentation on unit testing in javascript",
-  "main": "sample1.js",
+  "main": "src/todo.js",
   "scripts": {
     "test": "karma start"
   },
@@ -11,8 +11,13 @@
   "devDependencies": {
     "jasmine": "^3.5.0",
     "karma": "^5.0.4",
+    "karma-cli": "^2.0.0",
+    "karma-coverage": "^2.0.2",
     "karma-chrome-launcher": "^3.1.0",
     "karma-jasmine": "^3.1.1",
     "karma-jasmine-html-reporter": "^1.5.3"
+  },
+  "directories": {
+    "test": "test"
   }
 }

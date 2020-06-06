@@ -1,5 +1,5 @@
 // Karma configuration
-// Generated on Sun May 03 2020 19:45:36 GMT+0530 (India Standard Time)
+// Generated on Sat Jun 06 2020 11:14:10 GMT+0530 (India Standard Time)
 
 module.exports = function(config) {
   config.set({
@@ -15,8 +15,8 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      'src/*.js',
-      'test/*.spec.js'
+        'src/*.js',
+        'test/*.spec.js',
     ],
 
 
@@ -28,17 +28,14 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
+        'src/*.js': 'coverage'
     },
 
 
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['progress', 'kjhtml'],
-
-    client : {
-        clearContext: false
-    },
+    reporters: ['progress', 'coverage', 'kjhtml'],
 
 
     // web server port
@@ -62,6 +59,10 @@ module.exports = function(config) {
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
     browsers: ['Chromium'],
 
+    client: {
+        clearContext: false
+    },
+
 
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
@@ -69,6 +70,11 @@ module.exports = function(config) {
 
     // Concurrency level
     // how many browser should be started simultaneous
-    concurrency: Infinity
+    concurrency: Infinity,
+
+    coverageReporter: {
+        type: 'html',
+        dir: 'coverage'
+    }
   })
 }

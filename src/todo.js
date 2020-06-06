@@ -5,6 +5,7 @@ class Todo {
     }
 
     addTask(task) {
+	    window.confirm('adding task to taskList');
         this.taskList.push(task);
     }
 
